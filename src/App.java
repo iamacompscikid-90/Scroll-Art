@@ -1,9 +1,8 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        for(int i = 0; i < 10; i ++) {
-            if(i > 10) {
-                i = 0;
-            }
+        while (true) {
+            
+
             char[][] woodstock = getWoodstock();
 
         for (int y = 0; y < woodstock[0].length; y++) {
@@ -21,12 +20,13 @@ public class App {
             }
             System.out.println();
         }
+        Thread.sleep(20);
         }
         
     }
 
     static char[][] getWoodstock() {
-        char[][] arr = new char[8][7];
+        char[][] arr = new char[10][10];
 
         for (int y = 0; y < arr[0].length; y++) {
             for (int x = 0; x < arr.length; x++) {
@@ -50,11 +50,14 @@ public class App {
         arr[6][5] = ')';
         arr[4][6] = '√';
         arr[5][6] = '√';
+        arr[7][7] = 'S';
+        arr[8][7] = 'C';
+
 
         return arr;
     }
     static char[][] getSnoopy() {
-        char[][] arr = new char[15][15];
+        char[][] arr = new char[17][17];
 
         for(int y = 0; y < arr[0].length; y++) {
             for(int x = 0; x < arr.length; x++) {
@@ -122,6 +125,8 @@ public class App {
         arr[9][9] = '/';
         arr[6][10] = '|';
         arr[7][10] = '|';
+        arr[12][12] = 'S';
+        arr[13][12] = 'C';
 
 
 
