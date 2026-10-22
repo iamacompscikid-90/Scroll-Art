@@ -1,6 +1,10 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        char[][] woodstock = getWoodstock();
+        for(int i = 0; i < 10; i ++) {
+            if(i > 10) {
+                i = 0;
+            }
+            char[][] woodstock = getWoodstock();
 
         for (int y = 0; y < woodstock[0].length; y++) {
             for (int x = 0; x < woodstock.length; x++) {
@@ -17,6 +21,8 @@ public class App {
             }
             System.out.println();
         }
+        }
+        
     }
 
     static char[][] getWoodstock() {
