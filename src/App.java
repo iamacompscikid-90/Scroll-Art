@@ -7,6 +7,7 @@ public class App {
 
         for (int y = 0; y < woodstock[0].length; y++) {
             for (int x = 0; x < woodstock.length; x++) {
+                Thread.sleep(30);
                 System.out.print(woodstock[x][y]);
             }
             System.out.println();
@@ -16,11 +17,11 @@ public class App {
 
         for(int y = 0; y < snoopy[0].length; y++) {
             for(int x = 0; x < snoopy[0].length; x++) {
+                Thread.sleep(30);
                 System.out.print(snoopy[x][y]);
             }
             System.out.println();
         }
-        Thread.sleep(20);
         }
         
     }
