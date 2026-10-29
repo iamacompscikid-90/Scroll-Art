@@ -22,7 +22,7 @@ public class asciiartv2 {
 
        while (true) {
            // At each lane now on the top row, 7% chance to add a new image
-           for (int x = 0; x < WIDTH - 25; x += 25) {
+           for (int x = 0; x < WIDTH - 23; x += 23) {
                if (isBlank(prevRow, x) && rand.nextDouble() < 0.07) {
                    loadNextRowsWithImage(nextRows, x);
                }
@@ -44,7 +44,7 @@ public class asciiartv2 {
 
    // #2: checking if row is blank
    static boolean isBlank(char[] row, int x) {
-       for (int i = x; i < x + 25; i++) {
+       for (int i = x; i < x + 22; i++) {
            if (row[i] != ' ') {
                return false;
            }
@@ -55,7 +55,7 @@ public class asciiartv2 {
 
    private static void loadNextRowsWithImage(char[][] nextRows, int x) {
        // triple array version to better manage all images, it's getting a little bit out of hand!! and it is not like they are all the same size anyway.
-       char[][][] images = {getWoodstock(), getMiffy(), getSnoopy(), getFish()};
+       char[][][] images = {getWoodstock(), getMiffy(), getSnoopy(), getFish(), getTurtle()};
        char[][] img = images[rand.nextInt(images.length)];
        for (int iy = 0; iy < img.length; iy++) { // height
            for (int ix = 0; ix < img[iy].length; ix++) { // width
@@ -86,7 +86,7 @@ public class asciiartv2 {
 
         for (int y = 0; y < arr[0].length; y++) {
             for (int x = 0; x < arr.length; x++) {
-                arr[x][y] = ' ';
+                arr[y][x] = ' ';
             }
         }
 
@@ -118,7 +118,7 @@ public class asciiartv2 {
 
         for(int y = 0; y < arr[0].length; y++) {
             for(int x = 0; x < arr.length; x++) {
-                arr[x][y] = ' ';
+                arr[y][x] = ' ';
             }
         }
             arr[1][4] = '_';
@@ -194,9 +194,9 @@ public class asciiartv2 {
    // Ella's Miffy
     static char[][] getMiffy() {
         char[][]img = new char [22][23];
-        for(int y= 0; y < 22; y++ ) {
+        for(int y = 0; y < 22; y++ ) {
             for(int x = 0;x < 23;x++) {
-                img[y][x]=' ';
+                img[y][x]= ' ';
             }
         }
 
@@ -242,6 +242,7 @@ public class asciiartv2 {
         img[11][4] = '\\';
         img[10][20] = '/';
         img[11][19] = '/';
+
 
         for(int i = 5; i <= 18; i++){
             img[11][i] = '_';
@@ -335,15 +336,79 @@ public class asciiartv2 {
         img[7][8] = '/';
         img[8][3] = '/';
         img[8][7] = '/';
-        
-
-        
-
-
-       
 
         return img;
     }
+
+    //Viola Cafagna's Turtle
+        static char[][] getTurtle() {
+        char[][] img = new char[9][11];
+        // fill with empty space
+        for (int y = 0; y < 9; y++) {
+            for (int x = 0; x < 11; x++) {
+                img[y][x] = ' ';
+            }
+        }
+        // then fill individual characters
+        img[0][4] = '_';
+        img[0][5] = '_';
+        img[0][6] = '_';
+        img[1][3] = '/';
+        img[1][4] = '@';
+        img[1][6] = '@';
+        img[1][7] = '\\';
+
+        img[2][3] = '\\';
+        img[2][7] = '/';
+        img[3][1] = '_';
+        img[3][2] = '_';
+        img[3][3] = '/';
+        img[3][4] = '/';
+        img[3][5] = '|';
+        img[3][6] = '\\';
+        img[3][7] = '\\';
+        img[3][8] = '_';
+
+        img[4][0] = '/';
+        img[4][2] = '/';
+        img[4][3] = '\\';
+        img[4][4] = '\\';
+        img[4][5] = '|';
+        img[4][6] = '/';
+        img[4][7] = '/';
+        img[4][8] = '\\';
+        img[4][10] = '\\';
+
+        img[5][0] = '\\';
+        img[5][1] = '/';
+        img[5][2] = '\\';
+        img[5][3] = '/';
+        img[5][4] = '/';
+        img[5][5] = '|';
+        img[5][6] = '\\';
+        img[5][7] = '\\';
+        img[5][8] = '/';
+        img[5][9] = '\\';
+        img[5][10] = '/';
+
+        img[6][3] = '\\';
+        img[6][4] = '\\';
+        img[6][5] = '|';
+        img[6][6] = '/';
+        img[6][7] = '/';
+
+        img[7][4] = '/';
+        img[7][5] = '/';
+        img[7][6] = '\\';
+        img[7][7] = '\\';
+        img[8][4] = '-';
+        img[8][7] = '-';
+
+
+
+        return img;
+    }
+
 
 
 
